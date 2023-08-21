@@ -6,16 +6,20 @@ class Solution:
         i = 0
         j = 0
         while (i< len(nums1) || j < len(nums2)):
-            #here
             if nums1[i] < nums2[j]:
                 merged.append(nums1[i])
-                i++
+                if (i + 1 < len(nums1)):
+
+
+                    i = i + 1 
             elif nums1[i] > nums2[j]):
                 merged.append(nums2[j])
-                j++
+                if (j + 1 < len(nums2)):
+                    j = j + 1
             else:
-                merged.append(nums2[j])
-                merged.append(nums2[j])
-                i++
-                j++
+                if (i + 1 < len(nums1)):
+
+                    i = i + 1 
+                if (j + 1 < len(nums2)):
+                    j = j + 1
         return merged[(len(merged)-1)//2]
