@@ -28,6 +28,8 @@ class Solution:
                     merged.extend(num1[i-1:])
                 elif j != len(nums2):
                     merged.extend(nums2[j-1:])
+                i = len(nums1)
+                j = len(nums2)
 
 
         return merged[(len(merged)-1)//2]
