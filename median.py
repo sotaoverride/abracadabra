@@ -7,24 +7,30 @@ class Solution:
         merged = []
         i = 0
         j = 0
-        while (i != len(nums1)-1 or j != len(nums2)-1):
+        while (i < len(nums1) or j < len(nums2)-1):
             if nums1[i] < nums2[j]:
                 merged.append(nums1[i])
-                if (i + 1 <= len(nums1)-1):
-
-
+                if (i +1 < len(nums1)):
                     i = i + 1 
             elif nums1[i] > nums2[j]:
                 merged.append(nums2[j])
                 if (j + 1 <= len(nums2)-1):
                     j = j + 1
-            elif
-                if (i + 1 <= len(nums1)-1):
+            elif (nums[i] == nums2[j])
+                if (i + 1 < len(nums1)-1):
 
                     i = i + 1 
-                if (j + 1 <= len(nums2)-1):
+                if (j + 1 < len(nums2)-1):
                     j = j + 1
-            elif 
+            else:
+                i = i+1
+                j = j+1
+                if i != len(nums1):
+                    merged.extend(num1[i-1:])
+                elif j ! = len(nums2):
+                    merged.extend(nums2[j-1:])
+
+
         return merged[(len(merged)-1)//2]
 if __name__ == "__main__":
 
