@@ -3,14 +3,19 @@ class Solution:
         len_nums1 = len(nums1)
         len_nums2 = len(nums2)
         merged[]
+        i = 0
         j = 0
-        for i,element in enumerate(nums1):
-
-            if element < nums2[j]:
-                merged.append(element)
-            else:
+        while (i< len(nums1) || j < len(nums2)):
+            #here
+            if nums1[i] < nums2[j]:
+                merged.append(nums1[i])
+                i++
+            elif nums1[i] > nums2[j]):
                 merged.append(nums2[j])
                 j++
-        if j < len_nums2-1:
-            merged.extend(nums2[j:])
+            else:
+                merged.append(nums2[j])
+                merged.append(nums2[j])
+                i++
+                j++
         return merged[(len(merged)-1)//2]
