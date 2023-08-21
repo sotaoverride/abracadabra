@@ -11,5 +11,5 @@ class Solution:
                 merged.append(nums2[i])
             j++
         if j < len_nums2-1:
-            merged.append(nums2[j:])
+            merged.extend(nums2[j:])
         return merged[(len(merged)-1)//2]
