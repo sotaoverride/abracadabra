@@ -16,7 +16,7 @@ class Solution:
                 merged.append(nums2[j])
                 if (j + 1 < len(nums2)):
                     j = j + 1
-            elif (nums[i] == nums2[j]):
+            elif (nums1[i] == nums2[j]):
                 if (i + 1 < len(nums1)):
                     i = i + 1 
                 if (j + 1 < len(nums2)):
@@ -25,7 +25,7 @@ class Solution:
                 i = i+1
                 j = j+1
                 if i != len(nums1):
-                    merged.extend(num1[i-1:])
+                    merged.extend(nums1[i-1:])
                 elif j != len(nums2):
                     merged.extend(nums2[j-1:])
                 i = len(nums1)
@@ -36,4 +36,8 @@ class Solution:
 if __name__ == "__main__":
 
     a = Solution()
+    print( a.findMedianSortedArrays([1,8,23,24], [9,10,11]))
     print( a.findMedianSortedArrays([1,2,3,4], [5,6,7]))
+    print( a.findMedianSortedArrays([1,2,3,8], [5,6,7]))
+    print( a.findMedianSortedArrays([1,2,3,4], [1,2,3]))
+
