@@ -8,17 +8,22 @@ class Solution:
         ListNode merged
         merged.val = 0
         merged.next = None
-        for i in lists:
-            #
-            current_new = i
-            tmp_new = current
-            while current_new.next is not None:
-                #
-                while current_new.val < merged.val:
-                    tmp = current_new
-                    current_new = current_new.next
-                tmp.next = merged
-                current_new = tmp
+        current = None
+        for i in range(len(lists)):
+            #here
+            current = lists[i]
+            flag = False
+            while current.next is not None:
+                while merged is not None:
+                    if current.val < merged.val:
+                        tmp = merged.next
+                        merged.next = current
+                        current.next = tmp
+                        flag = True
+                if not flag:
+                    merged.next = current
+                current = current.next
+                flag = False
                 
 
 
