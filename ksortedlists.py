@@ -15,11 +15,13 @@ class Solution:
             flag = False
             while current.next is not None:
                 while merged is not None:
-                    if current.val < merged.val:
-                        tmp = merged.next
-                        merged.next = current
-                        current.next = tmp
-                        flag = True
+                    if current.val > merged.val:
+                        if merged.next is not None:
+                            if merged.next.val < current.val:
+                                tmp = merged.next
+                                merged.next = current
+                                current.next = tmp
+                                flag = True
                 if not flag:
                     merged.next = current
                 current = current.next
