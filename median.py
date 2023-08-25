@@ -23,7 +23,12 @@ class Solution:
         merged.extend(nums2[j:])
 
 
-        return merged[(len(merged)-1)//2]
+        if len(merged) & 1:
+            #
+            return (merged[len(merged)/2]+merged[len(merged)/2-1])/2
+        else:
+            #
+            return merged[(len(merged)-1)//2]
 if __name__ == "__main__":
 
     a = Solution()
