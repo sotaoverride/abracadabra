@@ -8,27 +8,18 @@ class Solution:
         i = 0
         j = 0
         while ( i < len(nums1) and j < len(nums2) ):
-            if nums1[i] < nums2[j]:
+            if nums1[i] <= nums2[j]:
                 merged.append(nums1[i])
                 i = i + 1
-            elif nums1[i] > nums2[j]:
+            if nums1[i] >= nums2[j]:
                 merged.append(nums2[j])
-                j = j + 1
-            elif (nums1[i] == nums2[j]):
-                merged.append(nums2[j])
-                merged.append(nums2[i])
-                i = i + 1 
                 j = j + 1
         merged.extend(nums1[i:])
         merged.extend(nums2[j:])
-
-
-        if not (len(merged) & 1) and len(merged) >= 2:
-            #
+        if (len(merged) & 1) and len(merged) >= 1:
             return (merged[len(merged)//2]+merged[len(merged)//2-1])/2
-        else:
-            #
-            return merged[(len(merged)-1)//2]
+        elif len(merged) > 2:
+            return (merged[len(merged)//2]+merged[len(merged)//2-1])/2
 if __name__ == "__main__":
 
     a = Solution()
