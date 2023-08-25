@@ -16,10 +16,11 @@ class Solution:
                 j = j + 1
             elif (nums1[i] == nums2[j]):
                 merged.append(nums2[j])
+                merged.append(nums2[i])
                 i = i + 1 
                 j = j + 1
         merged.extend(nums1[i:])
-        merged.extend(nums1[j:])
+        merged.extend(nums2[j:])
 
 
         return merged[(len(merged)-1)//2]
