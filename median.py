@@ -23,9 +23,9 @@ class Solution:
         merged.extend(nums2[j:])
 
 
-        if len(merged) & 1:
+        if len(merged) & 1 and len(merged) >= 2:
             #
-            return (merged[len(merged)/2]+merged[len(merged)/2-1])/2
+            return (merged[len(merged)//2]+merged[len(merged)//2-1])/2
         else:
             #
             return merged[(len(merged)-1)//2]
